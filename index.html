@@ -113,6 +113,22 @@ document.addEventListener('keydown', function (e) {
     else if(e.code == "KeyR"){
         refresh();
     }
+    else if(e.code == "KeyQ"){
+      farhan--;
+      refreshResults();
+    }
+    else if(e.code == "KeyW"){
+        ginanjar--;
+        refreshResults();
+    }
+    else if(e.code == "KeyE"){
+        brilli--;
+        refreshResults();
+    }
+    else if(e.code == "KeyR"){
+        kosong--;
+        refreshResults();
+    }
 });
     var chart = new Chart(document.getElementById("bar-chart"), {
         type: 'doughnut',

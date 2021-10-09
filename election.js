@@ -37,8 +37,18 @@ else if(e.code == "Digit4"){
     console.log(kosong);
     refreshResults();
 }
-else if(e.code == "KeyR"){
-    refresh();
+else if(e.code == "KeyQ"){
+    farhan--;
+    console.log(e.code);
+    refreshResults();
+}
+else if(e.code == "KeyW"){
+    ginanjar--;
+    refreshResults();
+}
+else if(e.code == "KeyE"){
+    brilli--;
+    refreshResults();
 }
 });
 var chart = new Chart(document.getElementById("bar-chart"), {
