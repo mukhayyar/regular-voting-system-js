@@ -30,7 +30,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Kandidat 1</h5>
                           <p class="card-text">Muhammad Farhan Jibran - XI MM</p>
-                          <a href="#" id="candidate-one" class="btn btn-primary">Vote: 0</a>
+                          <h2 href="#" id="candidate-one" class="text-danger">Vote: 0</>
                         </div>
                       </div>
                 </div>
@@ -41,7 +41,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Kandidat 2</h5>
                           <p class="card-text">Muhammad Ginanjar Mulyo XI TKJ</p>
-                          <a href="#" id="candidate-two" class="btn btn-primary">Vote: 0</a>
+                          <h2 href="#" id="candidate-two" class="text-danger">Vote: 0</h2>
                         </div>
                       </div>
                 </div>
@@ -52,7 +52,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Kandidat 3</h5>
                           <p class="card-text">Brilliano Yusuf Najma R XI RPL</p>
-                          <a href="#" id="candidate-three" class="btn btn-primary">Vote: 0</a>
+                          <h2 href="#" id="candidate-three" class="text-danger">Vote: 0</h2>
                         </div>
                       </div>
                 </div>
@@ -109,9 +109,6 @@ document.addEventListener('keydown', function (e) {
         kosong++;
         console.log(kosong);
         refreshResults();
-    }
-    else if(e.code == "KeyR"){
-        refresh();
     }
     else if(e.code == "KeyQ"){
       farhan--;
