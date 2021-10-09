@@ -51,7 +51,7 @@
                         <img src="img/brilli.JPG" style="height: 300px;" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Kandidat 3</h5>
-                          <p class="card-text">Brilliano Yusuf Najma Rasyada XI RPL</p>
+                          <p class="card-text">Brilliano Yusuf Najma R XI RPL</p>
                           <a href="#" id="candidate-three" class="btn btn-primary">Vote: 0</a>
                         </div>
                       </div>
@@ -61,7 +61,83 @@
         <h3 id="kosong" class="text-center text-uppercase text-secondary mt-2">
           Tanpa suara: 0
         </h3>
+      </section>
+    <section class="container" style="width: 600px; height: 500px;">
+      <h3 class="text-center text-uppercase text-secondary mt-2">
+        Chart Voting
+      </h3>
+      <canvas id="bar-chart" width="200" height="200"></canvas>
     </section>
-    <script src="election.js"></script>
+    <!-- <script src="election.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var farhan = 0;
+var ginanjar = 0;
+var brilli = 0;
+var kosong = 0;
+
+
+function refreshResults () {
+  var results = document.getElementById('results');
+  var one = document.getElementById('candidate-one');
+  var two = document.getElementById('candidate-two');
+  var three = document.getElementById('candidate-three');
+  var zero = document.getElementById('kosong');
+  results.innerHTML = 'total: ' + (farhan + ginanjar + brilli + kosong);
+  zero.innerHTML = 'Tanpa suara: ' + kosong;
+  one.innerHTML = 'Vote: ' + farhan;
+  two.innerHTML = 'Vote: ' + ginanjar;
+  three.innerHTML = 'Vote: ' + brilli;
+  var data = [farhan,ginanjar,brilli,kosong]
+  addData(data)
+}
+
+document.addEventListener('keydown', function (e) {
+    if(e.code == "Digit1"){
+        farhan++;
+        refreshResults();
+    }
+    else if(e.code == "Digit2"){
+        ginanjar++;
+        refreshResults();
+    }
+    else if(e.code == "Digit3"){
+        brilli++;
+        refreshResults();
+    } 
+    else if(e.code == "Digit4"){
+        kosong++;
+        console.log(kosong);
+        refreshResults();
+    }
+    else if(e.code == "KeyR"){
+        refresh();
+    }
+});
+    var chart = new Chart(document.getElementById("bar-chart"), {
+        type: 'doughnut',
+        data: {
+          labels: ["Muhammad Farhan Jibran - XI MM", "Muhammad Ginanjar Mulyo XI TKJ", "Brilliano Yusuf Najma Rasyada XI RPL", "Tanpa Suara"],
+          datasets: [
+            {
+              label: "Total Voting",
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#c45850"],
+              data: [0,0,0,0]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Predicted world population (millions) in 2050'
+          }
+        }
+    });
+    function addData(data) {
+        chart.data.datasets[0].data = data;
+        chart.update();
+    }
+    </script>
 </body>
 </html>
